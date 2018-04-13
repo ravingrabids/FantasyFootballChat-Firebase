@@ -8,20 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		9D02F4C62059AECD00CE10FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02F4C52059AECD00CE10FB /* AppDelegate.swift */; };
-		9D02F4C82059AECD00CE10FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02F4C72059AECD00CE10FB /* ViewController.swift */; };
+		9D02F4C82059AECD00CE10FB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02F4C72059AECD00CE10FB /* LoginController.swift */; };
 		9D02F4CB2059AECD00CE10FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D02F4C92059AECD00CE10FB /* Main.storyboard */; };
 		9D02F4CD2059AECD00CE10FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D02F4CC2059AECD00CE10FB /* Assets.xcassets */; };
 		9D02F4D02059AECD00CE10FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D02F4CE2059AECD00CE10FB /* LaunchScreen.storyboard */; };
+		9D02F4D82059AF1D00CE10FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D02F4D72059AF1D00CE10FB /* GoogleService-Info.plist */; };
+		9D17A0E12069855B0006D6B4 /* ChatDialogueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D17A0E02069855B0006D6B4 /* ChatDialogueCell.swift */; };
+		9D436BAE2069184100365AF9 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D436BAD2069184100365AF9 /* UserCell.swift */; };
+		9D772AAA207FD6C200EB95FC /* ChatInputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D772AA9207FD6C200EB95FC /* ChatInputContainerView.swift */; };
+		9DBFCFB0206423F4009A9F7F /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFCFAF206423F4009A9F7F /* Dialogue.swift */; };
+		9DD45BC9206BE4BF006558BB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD45BC8206BE4BF006558BB /* TabBarController.swift */; };
+		9DD45BCB206BE5F7006558BB /* StatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD45BCA206BE5F7006558BB /* StatsController.swift */; };
+		9DE9D4BC2059B0DE00148EEB /* DialoguesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9D4BB2059B0DE00148EEB /* DialoguesController.swift */; };
+		9DE9D4BE2059B10600148EEB /* NewDialogueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9D4BD2059B10600148EEB /* NewDialogueController.swift */; };
+		9DE9D4C02059B13300148EEB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9D4BF2059B13200148EEB /* Extensions.swift */; };
+		9DE9D4C22059B14F00148EEB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9D4C12059B14F00148EEB /* User.swift */; };
+		9DE9D4C42059B19800148EEB /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9D4C32059B19800148EEB /* ChatController.swift */; };
+		F7CF3A24CE5B0F95A3892F58 /* Pods_FantasyFootballChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0407AB85FECE993CDAB86F53 /* Pods_FantasyFootballChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0407AB85FECE993CDAB86F53 /* Pods_FantasyFootballChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FantasyFootballChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D02F4C22059AECD00CE10FB /* FantasyFootballChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyFootballChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D02F4C52059AECD00CE10FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D02F4C72059AECD00CE10FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9D02F4C72059AECD00CE10FB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9D02F4CA2059AECD00CE10FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D02F4CC2059AECD00CE10FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D02F4CF2059AECD00CE10FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D02F4D12059AECE00CE10FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D02F4D72059AF1D00CE10FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D17A0E02069855B0006D6B4 /* ChatDialogueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDialogueCell.swift; sourceTree = "<group>"; };
+		9D436BAD2069184100365AF9 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		9D772AA9207FD6C200EB95FC /* ChatInputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputContainerView.swift; sourceTree = "<group>"; };
+		9DBFCFAF206423F4009A9F7F /* Dialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
+		9DD45BC8206BE4BF006558BB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9DD45BCA206BE5F7006558BB /* StatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsController.swift; sourceTree = "<group>"; };
+		9DE9D4BB2059B0DE00148EEB /* DialoguesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialoguesController.swift; sourceTree = "<group>"; };
+		9DE9D4BD2059B10600148EEB /* NewDialogueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDialogueController.swift; sourceTree = "<group>"; };
+		9DE9D4BF2059B13200148EEB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9DE9D4C12059B14F00148EEB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9DE9D4C32059B19800148EEB /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		C913ACB10F44179F5A367C49 /* Pods-FantasyFootballChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyFootballChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FantasyFootballChat/Pods-FantasyFootballChat.debug.xcconfig"; sourceTree = "<group>"; };
+		E4CE530BCCD3062E6EC51E4D /* Pods-FantasyFootballChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyFootballChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-FantasyFootballChat/Pods-FantasyFootballChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7CF3A24CE5B0F95A3892F58 /* Pods_FantasyFootballChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +69,8 @@
 			children = (
 				9D02F4C42059AECD00CE10FB /* FantasyFootballChat */,
 				9D02F4C32059AECD00CE10FB /* Products */,
+				AC4E77052E78DE32BE336944 /* Pods */,
+				E1504DCA52C87A621C154966 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +86,42 @@
 			isa = PBXGroup;
 			children = (
 				9D02F4C52059AECD00CE10FB /* AppDelegate.swift */,
-				9D02F4C72059AECD00CE10FB /* ViewController.swift */,
+				9D02F4C72059AECD00CE10FB /* LoginController.swift */,
+				9DE9D4BB2059B0DE00148EEB /* DialoguesController.swift */,
+				9DE9D4BD2059B10600148EEB /* NewDialogueController.swift */,
+				9DE9D4C32059B19800148EEB /* ChatController.swift */,
+				9D772AA9207FD6C200EB95FC /* ChatInputContainerView.swift */,
+				9DE9D4C12059B14F00148EEB /* User.swift */,
+				9DBFCFAF206423F4009A9F7F /* Dialogue.swift */,
+				9D436BAD2069184100365AF9 /* UserCell.swift */,
+				9D17A0E02069855B0006D6B4 /* ChatDialogueCell.swift */,
+				9DE9D4BF2059B13200148EEB /* Extensions.swift */,
+				9DD45BC8206BE4BF006558BB /* TabBarController.swift */,
+				9DD45BCA206BE5F7006558BB /* StatsController.swift */,
 				9D02F4C92059AECD00CE10FB /* Main.storyboard */,
 				9D02F4CC2059AECD00CE10FB /* Assets.xcassets */,
 				9D02F4CE2059AECD00CE10FB /* LaunchScreen.storyboard */,
 				9D02F4D12059AECE00CE10FB /* Info.plist */,
+				9D02F4D72059AF1D00CE10FB /* GoogleService-Info.plist */,
 			);
 			path = FantasyFootballChat;
+			sourceTree = "<group>";
+		};
+		AC4E77052E78DE32BE336944 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C913ACB10F44179F5A367C49 /* Pods-FantasyFootballChat.debug.xcconfig */,
+				E4CE530BCCD3062E6EC51E4D /* Pods-FantasyFootballChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E1504DCA52C87A621C154966 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0407AB85FECE993CDAB86F53 /* Pods_FantasyFootballChat.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D02F4D42059AECE00CE10FB /* Build configuration list for PBXNativeTarget "FantasyFootballChat" */;
 			buildPhases = (
+				5322AC5C54152AF0B993DD07 /* [CP] Check Pods Manifest.lock */,
 				9D02F4BE2059AECD00CE10FB /* Sources */,
 				9D02F4BF2059AECD00CE10FB /* Frameworks */,
 				9D02F4C02059AECD00CE10FB /* Resources */,
+				F3C5C43303724C9112EBA6F7 /* [CP] Embed Pods Frameworks */,
+				4FC6753E111919CC3D05625D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D02F4D02059AECD00CE10FB /* LaunchScreen.storyboard in Resources */,
+				9D02F4D82059AF1D00CE10FB /* GoogleService-Info.plist in Resources */,
 				9D02F4CD2059AECD00CE10FB /* Assets.xcassets in Resources */,
 				9D02F4CB2059AECD00CE10FB /* Main.storyboard in Resources */,
 			);
@@ -131,12 +195,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4FC6753E111919CC3D05625D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FantasyFootballChat/Pods-FantasyFootballChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5322AC5C54152AF0B993DD07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FantasyFootballChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3C5C43303724C9112EBA6F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FantasyFootballChat/Pods-FantasyFootballChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FantasyFootballChat/Pods-FantasyFootballChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9D02F4BE2059AECD00CE10FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D02F4C82059AECD00CE10FB /* ViewController.swift in Sources */,
+				9DE9D4C02059B13300148EEB /* Extensions.swift in Sources */,
+				9DE9D4BC2059B0DE00148EEB /* DialoguesController.swift in Sources */,
+				9DD45BC9206BE4BF006558BB /* TabBarController.swift in Sources */,
+				9DE9D4C42059B19800148EEB /* ChatController.swift in Sources */,
+				9DBFCFB0206423F4009A9F7F /* Dialogue.swift in Sources */,
+				9DE9D4C22059B14F00148EEB /* User.swift in Sources */,
+				9D17A0E12069855B0006D6B4 /* ChatDialogueCell.swift in Sources */,
+				9DD45BCB206BE5F7006558BB /* StatsController.swift in Sources */,
+				9D436BAE2069184100365AF9 /* UserCell.swift in Sources */,
+				9D02F4C82059AECD00CE10FB /* LoginController.swift in Sources */,
+				9D772AAA207FD6C200EB95FC /* ChatInputContainerView.swift in Sources */,
+				9DE9D4BE2059B10600148EEB /* NewDialogueController.swift in Sources */,
 				9D02F4C62059AECD00CE10FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +407,7 @@
 		};
 		9D02F4D52059AECE00CE10FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C913ACB10F44179F5A367C49 /* Pods-FantasyFootballChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +423,7 @@
 		};
 		9D02F4D62059AECE00CE10FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4CE530BCCD3062E6EC51E4D /* Pods-FantasyFootballChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
