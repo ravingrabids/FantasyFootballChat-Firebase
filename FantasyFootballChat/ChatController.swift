@@ -32,33 +32,16 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
             let messagesRef = Database.database().reference().child("messages").child(messageId)
             messagesRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 if let value = snapshot.value as? NSDictionary {
-//                    let dialogue = Dialogue(dictionary: value as! [String : AnyObject])
-//                    let fromId = value["fromId"] as? String ?? "fromId not found"
-//                    let toId = value["toId"] as? String ?? "toId not found"
-//                    if let text = value["text"] as? String {
-//                        dialogue.text = text
-//                    } else {
-//                        let imageUrl = value["imageUrl"] as? String ?? "imageUrl not found"
-//                        dialogue.imageUrl = imageUrl
-//                        let imageWidth = value["imageWidth"] as? NSNumber
-//                        dialogue.imageWidth = imageWidth
-//                        let imageHeight = value["imageHeight"] as? NSNumber
-//                        dialogue.imageHeight = imageHeight
-//                    }
-//                    let timestamp = value["timestamp"] as? NSNumber ?? 0
-//                    dialogue.fromId = fromId
-//                    dialogue.toId = toId
-//                    dialogue.timestamp = timestamp
                     self.dialogues.append(Dialogue(dictionary: value as! [String : AnyObject]))
                     DispatchQueue.main.async {
                         self.collectionView?.reloadData()
                         let indexPath = NSIndexPath(item: self.dialogues.count - 1 , section: 0)
                         self.collectionView?.scrollToItem(at: indexPath as IndexPath, at: .bottom, animated: true)
-                    }
                 }
-                    }, withCancel: nil)
+            }
                 }, withCancel: nil)
-        }
+            }, withCancel: nil)
+    }
 
     let cellId = "cellId"
     
@@ -71,14 +54,15 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(ChatDialogueCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.keyboardDismissMode = .interactive
-        }
+    }
     
     lazy var inputContainerView: ChatInputContainerView = {
         let chatInputContainerView = ChatInputContainerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
         chatInputContainerView.chatController = self
         return chatInputContainerView
-        }()
+    }()
     
+    // load image
     @objc func handleUploadImage() {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -102,6 +86,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         dismiss(animated: true, completion: nil)
     }
     
+    // video URL selected
     private func handeVideoSelectedForUrl(url: NSURL) {
         let fileName = NSUUID().uuidString + ".mov"
         let uploadTask = Storage.storage().reference().child("message-movies").child(fileName).putFile(from: url as URL, metadata: nil, completion: { (metadata, error) in
@@ -141,6 +126,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         return nil
     }
     
+    // image selected
     private func handleImageSelectedForInfo(info: [String:AnyObject]) {
         var selectedFromPicker: UIImage?
         if let editedImage = info["UIImagePickerControllerEditedImage"] as! UIImage? {
@@ -155,6 +141,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         }
     }
     
+    // send image to Firebase
     private func uploadToFirebaseStorageUsingImage(image: UIImage, completion: @escaping (_ imageUrl: String) -> ()) {
         let imageName = NSUUID().uuidString
         let ref = Storage.storage().reference().child("message_images").child(imageName)
@@ -176,7 +163,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
             return inputContainerView
             }
     }
-    
+
     override var canBecomeFirstResponder: Bool {
         return true
     }
@@ -193,9 +180,10 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         if dialogues.count > 0 {
         let indexPath = NSIndexPath(item: dialogues.count - 1, section: 0)
         collectionView?.scrollToItem(at: indexPath as IndexPath, at: .top, animated: true)
-    }
+        }
     }
     
+    // keyboard hide
     @objc func handleKeyboardWillHide(notification: Notification) {
         containerViewBottomAnchor?.constant = 0
     }
@@ -218,6 +206,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         return dialogues.count
     }
     
+    // custom cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ChatDialogueCell
         cell.chatConroller = self
@@ -245,10 +234,11 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         } else {
             cell.zoomButton.isHidden = true
         }
-        // cell.playButton.isHidden = dialogue.videoUrl == nil
+    
         return cell
     }
     
+    // cell setup
     private func setupCell(cell: ChatDialogueCell, dialogue: Dialogue) {
         if let profileImageUrl = self.user?.profileImageUrl {
             cell.profileImageView.loadImageUsingCacheWithURLString(urlString: profileImageUrl)
@@ -267,15 +257,15 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
             cell.bubbleRightAnchor?.isActive = false
             cell.bubbleLeftAnchor?.isActive = true
         }
-    
+     
         if let dialougeImageUrl = dialogue.imageUrl {
             cell.messageImageView.loadImageUsingCacheWithURLString(urlString: dialougeImageUrl)
             cell.messageImageView.isHidden = false
             cell.bubbleView.backgroundColor = UIColor.clear
         } else {
             cell.messageImageView.isHidden = true
+        }
     }
-}
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var height: CGFloat = 80
@@ -290,8 +280,9 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         }
         let width = UIScreen.main.bounds.width
         return CGSize(width: width, height: height)
-}
+    }
     
+    // estimate size for text frame
     private func estimateFrameForText(text: String) -> CGRect {
         return NSString(string: text).boundingRect(with: CGSize(width: 200, height: 1000 ), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)], context: nil)
     }
@@ -303,6 +294,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
     
     var containerViewBottomAnchor: NSLayoutConstraint?
     
+    // send message
     @objc func handleSend() {
         let properties = ["text": inputContainerView.inputTextField.text!] as [String : AnyObject]
         sendMessageWithProperties(properties: properties)
@@ -313,6 +305,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         sendMessageWithProperties(properties: properties)
     }
     
+    // send message setup
     private func sendMessageWithProperties(properties: [String:AnyObject]) {
         let ref = Database.database().reference().child("messages")
         let childRef = ref.childByAutoId()
@@ -343,6 +336,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
     var blackBackGroundView: UIView?
     var startingImageView: UIImageView?
     
+    // zoomIn for start chat view
     func performZoomInForStartImageView(startImageView: UIImageView) {
         self.startingImageView = startImageView
         self.startingImageView?.isHidden = true
@@ -368,11 +362,11 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
                 zoomImageView.frame = CGRect(x: 0, y: 0, width: keyWindow.frame.width, height: height)
                 zoomImageView.center = keyWindow.center
             }, completion: { (completed: Bool) in
-//                zoomOutImageView.removeFromSuperview()
             })
         }
     }
     
+    // zoomOut for chat view
     @objc func performZoomOut(tapGesture: UITapGestureRecognizer) {
         if let zoomOutImageView = tapGesture.view as? UIImageView {
             zoomOutImageView.layer.cornerRadius = 16

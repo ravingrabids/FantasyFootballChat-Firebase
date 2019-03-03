@@ -184,7 +184,6 @@ class ChatDialogueCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("Fatal error with init")
         }
-    
-    
+ 
 }
 

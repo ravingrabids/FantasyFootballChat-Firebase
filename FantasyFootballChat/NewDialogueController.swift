@@ -21,8 +21,9 @@ class NewDialogueController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 10/255 , green: 80/255, blue: 10/255, alpha: 1)
         fetchUsers()
-        }
+    }
     
+    // get users
     func fetchUsers() {
         let rootRef = Database.database().reference()
         let query = rootRef.child("users").queryOrdered(byChild: "Name")
@@ -40,19 +41,20 @@ class NewDialogueController: UITableViewController {
                     user.id = id
                     self.users.append(user)
                     DispatchQueue.main.async { self.tableView.reloadData() }
-                        }
                     }
                 }
             }
+        }
     
     @objc func handleCancel() {
         dismiss(animated: true, completion: nil)
-        }
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
-        }
+    }
     
+    // custom cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserCell
         let user = users[indexPath.row]
@@ -64,11 +66,11 @@ class NewDialogueController: UITableViewController {
             cell.profileImageView.loadImageUsingCacheWithURLString(urlString: profileImageUrl)
         }
         return cell
-        }
+    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
-        }
+    }
     
     var dialoguesController: DialoguesController?
     
@@ -76,8 +78,8 @@ class NewDialogueController: UITableViewController {
         dismiss(animated: true) {
             let user = self.users[indexPath.row]
             self.dialoguesController?.handleShowChatControllerForUser(user: user)
-            }
         }
+    }
     
     
 }

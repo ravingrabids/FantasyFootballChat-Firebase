@@ -19,6 +19,7 @@ class Dialogue: NSObject {
     var imageWidth: NSNumber?
     var videoUrl: String?
     
+    // get Id of user, sender or reciever
     func chatPartnerId() -> String {
         if fromId == Auth.auth().currentUser?.uid {
             return toId!
@@ -29,7 +30,6 @@ class Dialogue: NSObject {
     
     init(dictionary: [String: AnyObject]) {
         super.init()
-        
         fromId = dictionary["fromId"] as? String
         text = dictionary["text"] as? String
         timestamp = dictionary["timestamp"] as? NSNumber

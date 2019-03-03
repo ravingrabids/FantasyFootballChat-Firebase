@@ -36,7 +36,7 @@
 		9D02F4CC2059AECD00CE10FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D02F4CF2059AECD00CE10FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D02F4D12059AECE00CE10FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D02F4D72059AF1D00CE10FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D02F4D72059AF1D00CE10FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D17A0E02069855B0006D6B4 /* ChatDialogueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDialogueCell.swift; sourceTree = "<group>"; };
 		9D436BAD2069184100365AF9 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		9D772AA9207FD6C200EB95FC /* ChatInputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputContainerView.swift; sourceTree = "<group>"; };
@@ -85,26 +85,50 @@
 		9D02F4C42059AECD00CE10FB /* FantasyFootballChat */ = {
 			isa = PBXGroup;
 			children = (
+				9DB3762D221760BB00BA2100 /* Models */,
+				9DB3762C2217609900BA2100 /* ViewControllers */,
+				9DB3762B2217607500BA2100 /* Utilities */,
+			);
+			path = FantasyFootballChat;
+			sourceTree = "<group>";
+		};
+		9DB3762B2217607500BA2100 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
 				9D02F4C52059AECD00CE10FB /* AppDelegate.swift */,
+				9D02F4CC2059AECD00CE10FB /* Assets.xcassets */,
+				9D02F4D72059AF1D00CE10FB /* GoogleService-Info.plist */,
+				9D02F4D12059AECE00CE10FB /* Info.plist */,
+				9D02F4CE2059AECD00CE10FB /* LaunchScreen.storyboard */,
+				9D02F4C92059AECD00CE10FB /* Main.storyboard */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		9DB3762C2217609900BA2100 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				9D02F4C72059AECD00CE10FB /* LoginController.swift */,
 				9DE9D4BB2059B0DE00148EEB /* DialoguesController.swift */,
 				9DE9D4BD2059B10600148EEB /* NewDialogueController.swift */,
 				9DE9D4C32059B19800148EEB /* ChatController.swift */,
+				9DD45BC8206BE4BF006558BB /* TabBarController.swift */,
+				9DD45BCA206BE5F7006558BB /* StatsController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9DB3762D221760BB00BA2100 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				9D772AA9207FD6C200EB95FC /* ChatInputContainerView.swift */,
 				9DE9D4C12059B14F00148EEB /* User.swift */,
 				9DBFCFAF206423F4009A9F7F /* Dialogue.swift */,
 				9D436BAD2069184100365AF9 /* UserCell.swift */,
 				9D17A0E02069855B0006D6B4 /* ChatDialogueCell.swift */,
 				9DE9D4BF2059B13200148EEB /* Extensions.swift */,
-				9DD45BC8206BE4BF006558BB /* TabBarController.swift */,
-				9DD45BCA206BE5F7006558BB /* StatsController.swift */,
-				9D02F4C92059AECD00CE10FB /* Main.storyboard */,
-				9D02F4CC2059AECD00CE10FB /* Assets.xcassets */,
-				9D02F4CE2059AECD00CE10FB /* LaunchScreen.storyboard */,
-				9D02F4D12059AECE00CE10FB /* Info.plist */,
-				9D02F4D72059AF1D00CE10FB /* GoogleService-Info.plist */,
 			);
-			path = FantasyFootballChat;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		AC4E77052E78DE32BE336944 /* Pods */ = {

@@ -18,6 +18,7 @@ class TabBarController: UITabBarController {
         dialoguesController.tabBarItem.badgeColor = UIColor(red: 10/255 , green: 80/255, blue: 10/255, alpha: 1)
         dialoguesController.tabBarItem.badgeColor = UIColor(red: 10/255 , green: 80/255, blue: 10/255, alpha: 1)
         
+        // statsVC for statistics of Fantasy
         let statsController = StatsController()
         statsController.tabBarItem = UITabBarItem(title: "Stats", image: nil, tag: 1)
         statsController.tabBarItem.badgeColor = UIColor(red: 10/255 , green: 80/255, blue: 10/255, alpha: 1)

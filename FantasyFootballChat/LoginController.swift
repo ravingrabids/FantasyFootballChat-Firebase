@@ -26,8 +26,10 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         setupApplicationNameTextField()
         setupLoginRegisterSegmentedControl()
         setupAddProfileImage()
-        }
+    }
     
+    // setuping views for vc
+    // container for inputs
     let inputsContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
@@ -35,8 +37,9 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
         return view
-        }()
+    }()
     
+    // login/ registration button
     let loginRegisterButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(red: 10/255 , green: 80/255, blue: 10/255, alpha: 1)
@@ -48,8 +51,9 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
         return button
-        }()
+    }()
     
+    // profile image button
     let addProfileImage: UIButton = {
         let addImage = UIButton()
         let image = UIImage(named: "addPhoto1")
@@ -59,21 +63,21 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         addImage.translatesAutoresizingMaskIntoConstraints = false
         addImage.addTarget(self, action: #selector(handleAddPhotoToProfile), for: .touchUpInside)
         return addImage
-        }()
+    }()
     
     let nameTextField: UITextField = {
         let name = UITextField()
         name.placeholder = "Name"
         name.translatesAutoresizingMaskIntoConstraints = false
         return name
-        }()
+    }()
     
     let emailTextField: UITextField = {
         let email = UITextField()
         email.placeholder = "Email address"
         email.translatesAutoresizingMaskIntoConstraints = false
         return email
-        }()
+    }()
     
     let passwordTextField: UITextField = {
         let password = UITextField()
@@ -81,21 +85,21 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         password.translatesAutoresizingMaskIntoConstraints = false
         password.isSecureTextEntry = true
         return password
-        }()
+    }()
     
     let nameSeparatorView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-        }()
+    }()
     
     let emailSeparatorView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-        }()
+    }()
     
     let applicationNameTextField: UILabel = {
         let appName = UILabel()
@@ -105,7 +109,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         appName.translatesAutoresizingMaskIntoConstraints = false
         appName.textAlignment = NSTextAlignment.center
         return appName
-        }()
+    }()
     
     let loginRegisterSegmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Login","Register"])
@@ -114,15 +118,16 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         segmentedControl.selectedSegmentIndex = 1
         segmentedControl.addTarget(self, action: #selector(handleLoginRegisterChange), for: .valueChanged)
         return segmentedControl
-        }()
+    }()
     
+    // constraints for Login/ Register segment control
     func setupLoginRegisterSegmentedControl() {
         // constraints for segmentedcontrol
         loginRegisterSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         loginRegisterSegmentedControl.bottomAnchor.constraint(equalTo: inputsContainerView.topAnchor, constant: -12).isActive = true
         loginRegisterSegmentedControl.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor, multiplier: 1).isActive = true
         loginRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        }
+    }
     
     var inputsContainerViewHeightAnchor: NSLayoutConstraint?
     var nameTextFieldHeightAnchor: NSLayoutConstraint?
@@ -143,20 +148,20 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         inputsContainerView.addSubview(emailSeparatorView)
         inputsContainerView.addSubview(passwordTextField)
         
-        // constraints
+        // constraints for name TextFiled
         nameTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
         nameTextField.topAnchor.constraint(equalTo: inputsContainerView.topAnchor).isActive = true
         nameTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         nameTextFieldHeightAnchor = nameTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3)
         nameTextFieldHeightAnchor?.isActive = true
         
-        // constraints
+        // constraints for nameSeparator
         nameSeparatorView.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
         nameSeparatorView.topAnchor.constraint(equalTo: nameTextField.bottomAnchor).isActive = true
         nameSeparatorView.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         nameSeparatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
-        // constraints
+        // constraints for emailTextField
         emailTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
         emailTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor).isActive = true
         emailTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
@@ -164,57 +169,58 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         emailTextFieldHeightAnchor?.isActive = true
         
         
-        // constraints
+        // constraints for emailSeparatorView
         emailSeparatorView.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
         emailSeparatorView.topAnchor.constraint(equalTo: emailTextField.bottomAnchor).isActive = true
         emailSeparatorView.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         emailSeparatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
-        // constraints
+        // constraints for passwordTextField
         passwordTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
         passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor).isActive = true
         passwordTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3)
         passwordTextFieldHeightAnchor?.isActive = true
-        }
+    }
     
     func setupLoginRegisterButton() {
-        // constraints
+        // constraints for login / register button
         loginRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        }
+    }
     
     func setupApplicationNameTextField() {
-        // constraints
+        // constraints for applicationNameTextField
         applicationNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         applicationNameTextField.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
         applicationNameTextField.widthAnchor.constraint(equalToConstant: 200).isActive = true
         applicationNameTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        }
+    }
     
     func setupAddProfileImage() {
-        // constraints
+        // constraints for addProfileImage
         addProfileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         addProfileImage.topAnchor.constraint(equalTo: applicationNameTextField.bottomAnchor, constant: 8).isActive = true
         addProfileImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
         addProfileImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        }
+    }
     
+    // handle login register
     @objc func handleLoginRegister() {
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             handleLogin()
         } else {
             handleRegister()
-            }
         }
+    }
     
+    // handle login firebase
     @objc func handleLogin() {
         guard let email = emailTextField.text, let password = passwordTextField.text
             else {
@@ -231,8 +237,8 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
                 }
             self.dialoguesController.fetchUserAndSetupNavBarTitle()
             self.dismiss(animated: true, completion: nil)
-            }
         }
+    }
     
     @objc func handleRegister() {
         guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text
@@ -255,19 +261,19 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
             let storageRef = Storage.storage().reference().child("ProfileImages").child("\(imageName).jpg")
             if let uploadData = UIImageJPEGRepresentation(self.addProfileImage.image(for: .normal)!, 0.1) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
-                    if error != nil {
-                        print(error!)
-                        return
-                    }
-                    if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
-                        let values = ["Name" : name, "Email": email, "ProfileImageUrl": profileImageUrl]
-                        self.registerUserIntoDatabaseWithUid(uid: uid, values: values as [String : AnyObject])
-                        // user added to base (name, email and photo)
-                        }
-                    })
+                if error != nil {
+                    print(error!)
+                    return
                 }
+                if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
+                    let values = ["Name" : name, "Email": email, "ProfileImageUrl": profileImageUrl]
+                    self.registerUserIntoDatabaseWithUid(uid: uid, values: values as [String : AnyObject])
+                    // user added to base (name, email and photo)
+                    }
+                })
             }
         }
+    }
     
     private func registerUserIntoDatabaseWithUid(uid: String, values: [String : AnyObject]) {
         let ref = Database.database().reference()
@@ -278,23 +284,22 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
                 return
                 }
             })
-                // func setupNavBarWithUser
+    // func setupNavBarWithUser
         let user = User()
         user.setValuesForKeys(values)
         self.dialoguesController.setupNavBarWithUser(user: user)
-                //* first version
-                //      self.dialoguesController.fetchUserAndSetupNavBarTitle()
-                //*
+ 
         self.dismiss(animated: true, completion: nil)
                 // user successfully added to base, successfully authed
-        }
+    }
     
+    // add photo to user profile
     @objc func handleAddPhotoToProfile() {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
-        }
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         var selectedFromPicker: UIImage?
@@ -307,14 +312,14 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
             addProfileImage.setImage(selectedImage, for: .normal)
             }
         dismiss(animated: true, completion: nil)
-        }
+    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
-        }
+    }
     
+    // change button title login register
     @objc func handleLoginRegisterChange() {
-            // change button title login register
         let title = loginRegisterSegmentedControl.titleForSegment(at: (loginRegisterSegmentedControl.selectedSegmentIndex))
         loginRegisterButton.setTitle( title, for: .normal)
             // change uiview of inputsContainer
@@ -337,6 +342,6 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         } else {
             addProfileImage.isHidden = false
             }
-        }
+    }
     
 }
